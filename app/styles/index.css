@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+:root {
+    --color-primary-100: rgb(146, 119, 255);
+    --color-primary-200: rgb(124, 93, 250);
+    --color-primary-300: rgb(30, 33, 57);
+    --color-primary-400: rgb(37, 41, 69);
+
+    --color-secondary-200: rgb(223, 227, 250);
+    --color-secondary-100: rgb(136, 142, 176);
+    --color-secondary-300: rgb(126, 136, 195);
+    --color-error: rgb(236, 87, 87);
+    --color-error-light: rgb(255, 151, 151);
+    --color-warning: rgb(255, 143, 0);
+    --color-success: rgb(51, 214, 159);
+    --color-white: rgb(248, 248, 251);
+    --color-black-100: rgb(12, 14, 22);
+    --color-black-200: rgb(20, 22, 37);
+
+    --font-family-bold: 'League Spartan';
+    --font-family-regular: 'League Spartan';
+    --text-base-size: 1em;
+    --text-scale-ratio: 1.2;
+
+    --text-sm: calc(1em / var(--text-scale-ratio));
+    --text-md: calc(1em * var(--text-scale-ratio));
+    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+}
+
+
+body {
+    font-size: var(--text-base-size);
+    font-family: var(--font-family-regular);
+    color: var(--color-black-100);
+    background-color: var(--color-white);
+}
+
+h1.text-xxxl {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-xxxl);
+    color: var(--color-black-100);
+}
+
+h2.text-xxl {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-xxl);
+    color: var(--color-black-100);
+}
+
+h3.text-xl {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    color: var(--color-black-100);
+}
+
+h4.text-lg {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    color: var(--color-black-100);
+}
+
+
+.text-md {
+    font-size: var(--text-md);
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.color-secondary-100 {
+    color: var(--color-secondary-100);
+}
+
+.color-success {
+    color: var(--color-success);
+}
+
+.color-warning {
+    color: var(--color-warning);
+}
+
+.m-l-10 {
+    margin-left: 10px;
+}
+
+.app-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.heading-grid {
+    display: flex;
+    align-items: baseline;
+    gap: 350px;
+}
+
+.invoice-grid {
+    display: grid;
+    height: 600px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.invoice-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 2fr) 0.5fr;
+    grid-auto-flow: column;
+    align-content: center;
+    min-width: inherit;
+    min-height: 75px;
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 25px;
+    justify-items: center;
+}
+
+.invoice-row:last-child {
+    justify-self: flex-start;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 5px solid transparent;
+}
+
+.caret.right {
+    border-left-color: var(--color-secondary-100);
+    outline-width: 5px;
+    outline-color: var(--color-secondary-100);
+}
+
+.caret.bottom {
+    border-top-color: var(--color-secondary-100);
+    outline-width: 5px;
+    outline-color: var(--color-secondary-100);
+}
+
+.button {
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 24px;
+    padding: 10px 10px 10px 45px;
+    background-color: var(--color-primary-200);
+}
+
+.button::before {
+    display: block;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+
+.button::before{
+    position: absolute;
+    content: '';
+  }
+
+.button::before {
+    transform: translate(calc(-30px),-2px);
+    background-color: var(--color-white);
+}
+
+.heading-right-grid {
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+    margin-top: 15px;
+}
+
+.filter-status {
+    margin-right: 10px;
+}
