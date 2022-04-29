@@ -1,52 +1,212 @@
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
-    2. Remove default margin
-  */
-  * {
-    margin: 0;
-  }
-  /*
-    3. Allow percentage-based heights in the application
-  */
-  html, body {
-    height: 100%;
-  }
-  /*
-    Typographic tweaks!
-    4. Add accessible line-height
-    5. Improve text rendering
-  */
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
-    6. Improve media defaults
-  */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
-    7. Remove built-in form typography styles
-  */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
-    8. Avoid text overflows
-  */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
-    9. Create a root stacking context
-  */
-  #root, #__next {
-    isolation: isolate;
-  }
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+:root {
+    --color-primary-100: rgb(146, 119, 255);
+    --color-primary-200: rgb(124, 93, 250);
+    --color-primary-300: rgb(30, 33, 57);
+    --color-primary-400: rgb(37, 41, 69);
+
+    --color-secondary-200: rgb(223, 227, 250);
+    --color-secondary-100: rgb(136, 142, 176);
+    --color-secondary-300: rgb(126, 136, 195);
+    --color-error: rgb(236, 87, 87);
+    --color-error-light: rgb(255, 151, 151);
+    --color-warning: rgb(255, 143, 1);
+    --color-warning-light: hsl(34, 100%, 90%);
+    --color-success: rgb(51, 214, 159);
+    --color-success-light: hsl(160, 67%, 90%);
+    --color-white: rgb(248, 248, 251);
+    --color-black-100: rgb(12, 14, 22);
+    --color-black-200: rgb(20, 22, 37);
+
+    --font-family-bold: 'League Spartan';
+    --font-family-regular: 'League Spartan';
+    --text-base-size: 1em;
+    --text-scale-ratio: 1.2;
+
+    --text-sm: calc(1em / var(--text-scale-ratio));
+    --text-md: calc(1em * var(--text-scale-ratio));
+    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+}
+
+
+body {
+    font-size: var(--text-base-size);
+    font-family: var(--font-family-regular);
+    color: var(--color-black-100);
+    background-color: var(--color-white);
+}
+
+h1.text-xxxl {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-xxxl);
+    color: var(--color-black-100);
+}
+
+h2.text-xxl {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-xxl);
+    color: var(--color-black-100);
+}
+
+h3.text-xl {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    color: var(--color-black-100);
+}
+
+h4.text-lg {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    color: var(--color-black-100);
+}
+
+
+.text-md {
+    font-size: var(--text-md);
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.color-secondary-100 {
+    color: var(--color-secondary-100);
+}
+
+.color-success {
+    color: var(--color-success);
+}
+
+.color-warning {
+    color: var(--color-warning);
+}
+
+.bg-success-light {
+    background-color: var(--color-success-light);
+}
+
+.bg-warning-light {
+    background-color: var(--color-warning-light);
+}
+
+.bg-success {
+    background-color: var(--color-success);
+}
+
+.bg-warning {
+    background-color: var(--color-warning);
+}
+
+.m-l-10 {
+    margin-left: 10px;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.app-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.heading-grid {
+    display: flex;
+    align-items: baseline;
+    gap: 350px;
+}
+
+.invoice-grid {
+    display: grid;
+    height: 600px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.invoice-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 2fr) 0.5fr;
+    grid-auto-flow: column;
+    align-content: center;
+    min-width: inherit;
+    min-height: 75px;
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 25px;
+    justify-items: center;
+}
+
+.invoice-row h4 {
+  margin:auto;
+}
+
+.invoice-row:last-child {
+    justify-self: flex-start;
+}
+
+.button {
+    position: relative;
+    z-index: -10;
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 24px;
+    padding: 10px 10px 10px 45px;
+    background-color: var(--color-primary-200);
+}
+
+.button-wrapper {
+    position: relative;
+}
+
+.svg-icon {
+    width: 8px;
+    height: 4px;
+    align-items: flex-end;
+}
+
+.check-icon {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    border-radius: 25px;
+    border: 5px solid white;
+    background: white;
+    width: 25px;
+    height: 25px;
+}
+
+.arrow-down-icon {
+    align-self: center;
+}
+
+.heading-right-grid {
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+    margin-top: 15px;
+}
+
+.filter-dropdown {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.status-wrapper {
+    display: flex;
+    width: 105px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
