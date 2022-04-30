@@ -1,11 +1,13 @@
-import Invoice from "./Invoice";
+import InvoiceComponent from "./Invoice";
+import type { Invoice } from "~/models/Invoice";
+import PropTypes from 'prop-types'
 
-export function InvoiceList({ invoices }) {
-  return (
-    <div className="invoices-grid">
-      {invoices?.map((i) => {
-        return <Invoice key={i.id} invoice={i} />;
-      })}
-    </div>
-  );
+export default function InvoiceList(props: any) {
+  const { invoices } = props;
+  return invoices.map((invoice: Invoice) => <InvoiceComponent key={invoice.id} invoice={invoice} /> )
+}
+
+InvoiceList.prototype = {
+  props: PropTypes.object,
+  invoices: PropTypes.object
 }

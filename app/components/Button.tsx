@@ -3,7 +3,7 @@ function Button() {
   return (
     <div className="button-wrapper">
       <img src={PlusIcon} alt="check icon" className="check-icon" />
-      <button className="button">New Invoice</button>
+      <button className="button color-white">New Invoice</button>
     </div>
   );
 }
