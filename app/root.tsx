@@ -27,9 +27,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="app-grid">
           <Outlet />
-        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

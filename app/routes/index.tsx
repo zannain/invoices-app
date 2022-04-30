@@ -7,7 +7,7 @@ import { useLoaderData } from "@remix-run/react";
 import NoInvoices from "~/components/NoInvoices";
 import SideNav from "~/components/SideNav";
 import type { Invoice } from "~/models/Invoice";
-import InvoiceList from "~/components/InvoiceList";
+import {InvoiceList} from "~/components/InvoiceList";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: stylesUrl }];
@@ -37,11 +37,11 @@ const handleCurrency = async (i: Invoice ) => {
 export default function Index() {
   const data = useLoaderData();
   return (
-    <>
+    <div className="app-grid">
       <SideNav />
       <Heading count={data.length} />
       {data.length > 0 ? <InvoiceList invoices={data} /> : <NoInvoices />}
-    </>
+    </div>
   );
 }
 
