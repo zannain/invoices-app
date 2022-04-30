@@ -6,6 +6,8 @@ import stylesUrl from "~/styles/index.css";
 import invoices from "~/data.json";
 import { useLoaderData } from "@remix-run/react";
 import NoInvoices from "~/components/NoInvoices";
+import SideNav from "~/components/SideNav";
+import InvoiceForm from "~/components/InvoiceForm";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: stylesUrl }];
@@ -36,6 +38,8 @@ export default function Index() {
   const data = useLoaderData();
   return (
     <>
+      <SideNav />
+      <InvoiceForm />
       <Heading count={data.length} />
       {data.length > 0 ? <InvoiceList invoices={data} /> : <NoInvoices />}
     </>
