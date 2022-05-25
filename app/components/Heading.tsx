@@ -1,7 +1,8 @@
-import Button from "./Button";
+import ButtonComponent from "./Button";
 import ArrowDown from "public/assets/icon-arrow-down.svg";
 import type { InferProps } from "prop-types";
 import PropTypes from "prop-types";
+import Button from "./Button";
 
 function Heading(props: InferProps<typeof Heading.propTypes>) {
   const {count} = props;
@@ -18,7 +19,7 @@ function Heading(props: InferProps<typeof Heading.propTypes>) {
           <p>Filter by status</p>
           <img className="svg-icon" src={ArrowDown} alt="arrow down" />
         </div>
-        <Button />
+        <Button text="New Invoice" displayIcon={true} />
       </div>
     </div>
   );

@@ -10,17 +10,9 @@ function Status({ status }:InferProps<typeof Status.propTypes>)  {
   if (status)
   {
       return (
-        <div
-          className={
-            status == "pending"
-              ? "bg-warning-light status-wrapper"
-              : "bg-success-light status-wrapper"
-          }
-        >
-          <p className={status == "pending" ? "color-warning" : "color-success"}>
+          <p className={status == "pending" ? "color-warning bg-warning-light status-wrapper" : "color-success bg-success-light status-wrapper"}>
             {capitalizeFirstLetter(status)}
           </p>
-        </div>
       );
     }
     return null;

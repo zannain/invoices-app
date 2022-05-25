@@ -5,13 +5,15 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
+  ScrollRestoration
 } from "@remix-run/react";
-import stylesUrl from "~/styles/global.css";
+import SideNav, {links as sideNavLinks} from "./components/SideNav";
+import styles from "./tailwind.css";
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: stylesUrl },
-    ];
+    ...sideNavLinks(),
+    { rel: "stylesheet", href: styles }
+  ];
 };
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -27,7 +29,11 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <div className="app-grid">
+        <SideNav />
+
           <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

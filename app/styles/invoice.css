@@ -1,0 +1,9 @@
+.invoice-grid {
+    grid-area: main;
+    display: grid;
+    grid-auto-flow: column;
+    background-color: var(--color-white);
+    align-items: center;
+    justify-content: space-around;
+}
+
